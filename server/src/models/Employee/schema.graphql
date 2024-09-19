@@ -1,0 +1,51 @@
+type Employee {
+    id:                 ID
+    firstName:          String!
+    lastName:           String!
+    patronymic:         String!
+    email:              String
+    phone:              String
+    employmentDate:     Date
+    salary:             Int
+
+
+    role:           EmployeeRole!
+    position:       EmployeePosition!
+    schedule:       EmployeeSchedule!
+}
+
+type ListMetadata { 
+    count: Int!
+}
+
+type Query {
+    allEmployees: [Employee]
+    _allEmployeesMeta: ListMetadata
+}
+
+input uniqueInput { 
+    id: ID!
+}
+
+input connectInput { 
+    connect: uniqueInput
+}
+
+type Mutation { 
+    createEmployee(
+        firstName: String!,
+        lastName:  String!,
+        patronymic: String!,
+        email: String,
+        phone: String,
+        employmentDate: Date,
+        salary: Int,
+        roleId: ID,
+        positionId: ID!,
+        scheduleId: ID,
+    ): Employee
+    deleteEmployee(id: ID!): Employee
+}
+
+
+scalar Date

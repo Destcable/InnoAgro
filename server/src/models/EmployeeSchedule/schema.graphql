@@ -1,0 +1,18 @@
+type EmployeeSchedule { 
+    id:             ID
+    name:           String!
+}
+
+type ListMetadata { 
+    count: Int!
+}
+
+type Query {
+    allEmployeeSchedules: [EmployeeSchedule]
+    _allEmployeeSchedulesMeta: ListMetadata
+}
+
+type Mutation { 
+    createEmployeeSchedule(name: String!): EmployeeSchedule
+    deleteEmployeeSchedule(id: ID!): EmployeeSchedule
+}

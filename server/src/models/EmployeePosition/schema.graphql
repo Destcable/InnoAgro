@@ -1,0 +1,18 @@
+type EmployeePosition { 
+    id:             ID
+    name:           String!
+}
+
+type ListMetadata { 
+    count: Int!
+}
+
+type Query {
+    allEmployeePositions: [EmployeePosition]
+    _allEmployeePositionsMeta: ListMetadata
+}
+
+type Mutation { 
+    createEmployeePosition(name: String!): EmployeePosition
+    deleteEmployeePosition(id: ID!): EmployeePosition
+}

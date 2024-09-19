@@ -1,0 +1,18 @@
+type EmployeeRole { 
+    id:             ID
+    name:           String!
+}
+
+type ListMetadata { 
+    count: Int!
+}
+
+type Query {
+    allEmployeeRoles: [EmployeeRole]
+    _allEmployeeRolesMeta: ListMetadata
+}
+
+type Mutation { 
+    createEmployeeRole(name: String!): EmployeeRole
+    deleteEmployeeRole(id: ID!): EmployeeRole
+}
