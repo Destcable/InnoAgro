@@ -3,15 +3,23 @@ import {
     DatagridConfigurable,
     ReferenceField,
     ChipField,
+    TextField,
+    DateField,
+    NumberField,
 } from "react-admin";
 import EmployeeListActions from "./EmployeeListActions";
 import { EmployeeNameField } from "./Fields/EmployeeNameField";
 
 const EmployeeList = () => {
     return (
+        <>
         <List actions={<EmployeeListActions />}>    
             <DatagridConfigurable>
                 <EmployeeNameField source="name"/>
+                <TextField source="email" />
+                <TextField source="phone" />
+                <DateField source="employmentDate" />
+                <NumberField source="salary" />
                 <ReferenceField source="role.id" reference="EmployeeRole">
                     <ChipField source="name" />
                 </ReferenceField>
@@ -23,6 +31,8 @@ const EmployeeList = () => {
                 </ReferenceField>
             </DatagridConfigurable>
         </List>
+        </>
+
     )
 };
 

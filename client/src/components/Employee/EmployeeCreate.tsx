@@ -4,13 +4,13 @@ const EmployeeCreate = () => {
     return (
         <Create>
             <SimpleForm>
-                <TextInput source="firstName" validate={required()} />
-                <TextInput source="lastName" validate={required()} />
-                <TextInput source="patronymic" validate={required()} />
-                <TextInput source="email" />
-                <TextInput source="phone" />
-                <DateInput source="employmentDate" />
-                <NumberInput source="salary" />
+                <TextInput source="firstName" validate={required()} label="Имя" />
+                <TextInput source="lastName" validate={required()} label="Фамилия" />
+                <TextInput source="patronymic" validate={required()} label="Отчество" />
+                <TextInput source="email" label="Почта" />
+                <TextInput source="phone" label="Телефон" />
+                <DateInput source="employmentDate" label="Дата трудоустройства" />
+                <NumberInput source="salary" label="Зарплата" />
 
                 <ReferenceInput source="roleId" reference="EmployeeRole" />
                 <ReferenceInput source="positionId" reference="EmployeePosition" />
