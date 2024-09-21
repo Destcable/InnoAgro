@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "prisma-migrate": "npx prisma migrate dev",
-    "dbpush": "npx prisma db push"
+    "push": "npx prisma db push && npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "5.15.1",

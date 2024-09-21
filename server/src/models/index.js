@@ -4,7 +4,7 @@ import { createEmployeePosition } from "./EmployeePosition/Mutation.js"
 import { _allEmployeePositionsMeta, allEmployeePositions } from "./EmployeePosition/Query.js"
 import { createEmployeeRole } from "./EmployeeRole/Mutation.js"
 import { _allEmployeeRolesMeta, allEmployeeRoles } from "./EmployeeRole/Query.js"
-import { createEmployeeSchedule } from "./EmployeeSchedule/Mutation.js"
+import { createEmployeeSchedule, deleteEmployeeSchedule } from "./EmployeeSchedule/Mutation.js"
 import { _allEmployeeSchedulesMeta, allEmployeeSchedules } from "./EmployeeSchedule/Query.js"
 
 export const Query = {
@@ -22,6 +22,7 @@ export const Mutation = {
     createEmployeeRole,
     createEmployeePosition,
     createEmployeeSchedule,
+    deleteEmployeeSchedule,
     createEmployee,
     deleteEmployee
 }

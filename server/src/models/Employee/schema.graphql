@@ -3,6 +3,8 @@ type Employee {
     firstName:          String!
     lastName:           String!
     patronymic:         String!
+    dateOfBirth:        String
+    adress:             String
     email:              String
     phone:              String
     employmentDate:     Date
@@ -36,6 +38,8 @@ type Mutation {
         firstName: String!,
         lastName:  String!,
         patronymic: String!,
+        dateOfBirth: String,
+        adress: String,
         email: String,
         phone: String,
         employmentDate: Date,

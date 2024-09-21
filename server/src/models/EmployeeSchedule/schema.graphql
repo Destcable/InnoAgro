@@ -1,6 +1,7 @@
 type EmployeeSchedule { 
     id:             ID
-    name:           String!
+    type:           String!
+    workingDays:    [String]!
 }
 
 type ListMetadata { 
@@ -13,6 +14,6 @@ type Query {
 }
 
 type Mutation { 
-    createEmployeeSchedule(name: String!): EmployeeSchedule
+    createEmployeeSchedule(type: String!, workingDays: [String]): EmployeeSchedule
     deleteEmployeeSchedule(id: ID!): EmployeeSchedule
 }

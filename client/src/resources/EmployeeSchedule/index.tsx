@@ -7,5 +7,6 @@ const EmployeeScheduleCreate = lazy(() => import("./EmployeeScheduleCreate"))
 export const EmployeeScheduleResource = {
     name: "EmployeeSchedule", 
     list: <EmployeeScheduleList />,
-    create: <EmployeeScheduleCreate />
+    create: <EmployeeScheduleCreate />,
+    recordRepresentation: "type"
 }
