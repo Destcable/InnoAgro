@@ -1,4 +1,4 @@
-import { Admin, Resource } from "react-admin";
+import { Admin, Layout, Menu, Resource } from "react-admin";
 import { dataProvider } from "./core/config/dataProvider.config";
 import { EmployeeRoleResource } from "./resources/EmployeeRole";
 import { EmployeePositionResource } from "./resources/EmployeePosition";
@@ -8,6 +8,8 @@ import polyglotI18nProvider from 'ra-i18n-polyglot';
 import russianMessages from './core/config/i18n/ru';
 import englishMessages from './core/config/i18n/en';
 import { EmployeePage } from "./pages/EmployeePage";
+import { FC, ReactNode } from "react";
+import { FileResource } from "./resources/File";
 
 
 const translations = {
@@ -24,10 +26,33 @@ const i18nProvider = polyglotI18nProvider(
     ],
 );
 
+export const SidebarMenu = () => (
+    <Menu   >
+        <Menu.ResourceItem name="EmployeePage" />
+        <Menu.ResourceItem name="File" />
+    </Menu>
+);
+
+interface AdminLayoutProps { 
+    children?: ReactNode
+}
+
+export const AdminLayout: FC<AdminLayoutProps> = ({ children }) => (
+    <Layout menu={SidebarMenu}>
+        {children}
+    </Layout>
+);
+
 const App = () => (
-    <Admin dataProvider={dataProvider} i18nProvider={i18nProvider}>
-        {/* app */}
+    <Admin 
+        dataProvider={dataProvider} 
+        i18nProvider={i18nProvider}
+        layout={AdminLayout}
+    >
+        {/* Page's */}
         <Resource {...EmployeePage} />
+        <Resource {...FileResource} />
+
         {/* data */}
         <Resource {...EmployeeResource} />
         <Resource {...EmployeeRoleResource} />

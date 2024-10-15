@@ -12,8 +12,14 @@ export default {
       }
     },
     resources: { 
+      File: { 
+        name: 'Файлы'
+      },
       EmployeePage: { 
         name: 'Сотрудники',
+        fields: { 
+          name: 'Наименование',
+        }
       },
       Employee: { 
         name: 'Сотрудники',
@@ -38,9 +44,15 @@ export default {
       },
       EmployeeRole: { 
         name: 'Роли',
+        fields: { 
+          name: 'Наименование',
+        }
       },
       EmployeePosition: { 
         name: 'Должности',
+        fields: {
+          name: 'Наименование',
+        }
       },
       EmployeeSchedule: { 
         name: 'Графики работы',

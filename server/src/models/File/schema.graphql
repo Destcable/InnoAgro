@@ -1,0 +1,20 @@
+type File { 
+    id:            String
+    name:          String
+    type:          String
+    data:          Byte
+}
+
+type ListMetadata { 
+    count: Int!
+}
+
+type Query { 
+    allFiles: [File]
+    _allFilesMeta: ListMetadata
+}
+
+
+
+
+scalar Byte

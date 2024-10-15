@@ -47,3 +47,10 @@ model EmployeeSchedule {
     employees      Employee[]
 }
 
+model File { 
+    id             String       @id @default(cuid())
+    name           String
+    folder         String       @default("default")
+    type           String
+    data           Bytes
+}
